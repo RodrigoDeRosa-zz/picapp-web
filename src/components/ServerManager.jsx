@@ -70,7 +70,7 @@ export default class ServerManager extends React.Component{
   }
   /* Adds a server*/
   handleAdd(server){
-    let url = 'http://picappss.herokuapp.com/api/servers/' + '?BusinessToken=' + this.state.token;
+    let url = 'http://picappss.herokuapp.com/api/servers/?BusinessToken=' + this.state.token;
     axios.post(url, server).then(() => this.getServers()).catch(() => this.handleError());
   }
 
