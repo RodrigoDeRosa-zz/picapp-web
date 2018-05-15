@@ -1,0 +1,19 @@
+.ServerAdder-buttons-holder{
+  display: flex;
+  justify-content: space-around;
+  padding: 10px;
+  border-top: 3px solid darkgreen;
+}
+.ServerAdder-button{
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: small-caps;
+  color: white;
+  background-color: #1f1f1f;
+  font-size: 20px;
+  font-weight: bold;
+  border-radius: 5px;
+  padding: 10px 50px 10px 50px;
+}
+.ServerAdder-button:hover{
+  background-color: darkgreen;
+}

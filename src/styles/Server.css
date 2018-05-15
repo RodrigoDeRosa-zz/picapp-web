@@ -1,0 +1,52 @@
+.Server-holder{
+  position: relative;
+  align-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 35%;
+  padding: 20px 0 20px 0;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+.Server-holder:hover{
+  border: 2px solid #585858;
+}
+.Server-title{
+  flex-basis: 100%;
+  font-weight: bold;
+  font-size: 30px;
+  padding-bottom: 10px;
+}
+.Server-category-item{
+  flex-basis: 100%;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+.Server-category-name{
+  color: #bbbbbb;
+}
+.Server-delete-label{
+  position: absolute;
+  right: 15px;
+  font-weight: bold;
+  color: darkred;
+  font-size: 20px;
+  visibility: hidden;
+}
+.Server-delete-label.show{
+  visibility: visible;
+  cursor: pointer;
+}
+.Server-modify-label{
+  position: absolute;
+  left: 15px;
+  font-weight: bold;
+  color: orange;
+  font-size: 20px;
+  visibility: hidden;
+}
+.Server-modify-label.show{
+  visibility: visible;
+  cursor: pointer;
+}

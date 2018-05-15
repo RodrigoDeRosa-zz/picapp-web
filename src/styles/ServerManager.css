@@ -1,0 +1,36 @@
+.ServerManager-title-holder{
+  color: #b4b4b4;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.ServerManager-icon{
+  font-size: 70px;
+  padding-right: 15px;
+}
+.ServerManager-label {
+  font-size: 25px;
+}
+.ServerManager-server-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.ServerManager-notice {
+  color: white;
+  font-size: 50px;
+}
+.ServerManager-add-holder{
+  color: darkgreen;
+  margin-top: 40px;
+}
+.ServerManager-add-icon{
+  font-size: 70px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.ServerManager-add-label{
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+}

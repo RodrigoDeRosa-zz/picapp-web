@@ -1,0 +1,8 @@
+body {
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-variant: small-caps;
+  text-align: center;
+  /*Background animation*/
+  background: #212121;
+  background-size: auto;
+}

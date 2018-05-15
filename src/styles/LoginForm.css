@@ -1,0 +1,6 @@
+.LoginForm-holder {
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  text-align: left;
+}

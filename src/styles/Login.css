@@ -1,0 +1,28 @@
+.Login-holder {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  max-width: 300px;
+  background: #aaa;
+  padding: 20px;
+  margin: 100px auto;
+  border: 1px solid;
+  box-shadow: 5px 10px;
+}
+
+.Login-logo {
+  margin: auto;
+  padding-bottom: 15px;
+}
+
+.Login-error-label {
+  visibility: hidden;
+  color: darkred;
+  font-weight: bold;
+}
+
+.Login-error-label.show{
+  visibility: visible;
+}
+
+

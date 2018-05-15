@@ -1,0 +1,22 @@
+.Manager-route-holder{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.Manager-title-holder{
+  padding-top: 50px;
+  display: flex;
+  text-align: center;
+  flex-wrap: wrap;
+}
+.Manager-title-main{
+  color: white;
+  flex-basis: 100%;
+  font-size: 30px;
+}
+.Manager-title-secondary{
+  padding-top: 10px;
+  color: #cccccc;
+  flex-basis: 100%;
+  font-size: 15px;
+}

@@ -1,0 +1,28 @@
+.DataForm-holder {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  color: black;
+  width: 100%;
+  padding: 10px 0 10px 0;
+}
+.DataForm-label {
+  flex-basis: 100%;
+  font-size: 18px;
+  font-weight: bold;
+  padding-bottom: 5px;
+}
+.DataForm-input {
+  flex-basis: 60%;
+  padding: 15px 12px 15px 12px;
+  border-radius: 4px;
+  font-size: 16px;
+  font-style: italic;
+  width: 100%;
+}
+.DataForm-input.add{
+  border: 2px solid darkgreen;
+}
+.DataForm-input.modify{
+  border: 2px solid orange;
+}
