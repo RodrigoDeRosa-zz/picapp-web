@@ -10,11 +10,15 @@ export default class Manager extends React.Component {
   constructor(props){
     super(props);
     this.goToServers = this.goToServers.bind(this);
+    this.goToUsers = this.goToUsers.bind(this);
   }
 
   goToServers(){
-    console.log(this.props);
     this.props.history.push('/servers', {token: this.props.history.location.state.token});
+  }
+
+  goToUsers(){
+    this.props.history.push('/users');
   }
 
   render() {
@@ -27,7 +31,7 @@ export default class Manager extends React.Component {
         </div>
         <div className='Manager-route-holder'>
           <PathReferencer title={'Servidores'} icon={<FaDatabase/>} handleClick={this.goToServers}/>
-          <PathReferencer title={'Usuarios'} icon={<FaChild/>}/>
+          <PathReferencer title={'Usuarios'} icon={<FaChild/>} handleClick={this.goToUsers}/>
           <PathReferencer title={'Estadísticas'} icon={<FaAreaChart/>}/>
         </div>
       </div>

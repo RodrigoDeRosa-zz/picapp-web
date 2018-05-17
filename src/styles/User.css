@@ -1,0 +1,49 @@
+.User-holder{
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 20%;
+  padding: 25px 0 20px 20px;
+  color: white;
+  border: 2px solid rgba(0, 0, 0, 0);
+  border-radius: 10px;
+}
+.User-holder:hover{
+  border: 2px solid #585858;
+}
+.User-category-item{
+  flex-basis: 100%;
+  text-align: left;
+  padding-bottom: 5px;
+  font-size: 20px;
+}
+.User-category-name{
+  color: #bbbbbb;
+  font-size: 15px;
+}
+.User-delete-label{
+  position: absolute;
+  top: 7px;
+  right: 15px;
+  font-weight: bold;
+  color: darkred;
+  font-size: 15px;
+  visibility: hidden;
+}
+.User-delete-label.show{
+  visibility: visible;
+  cursor: pointer;
+}
+.User-modify-label{
+  position: absolute;
+  top: 7px;
+  left: 15px;
+  font-weight: bold;
+  color: orange;
+  font-size: 15px;
+  visibility: hidden;
+}
+.User-modify-label.show{
+  visibility: visible;
+  cursor: pointer;
+}

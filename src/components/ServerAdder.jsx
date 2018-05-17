@@ -14,10 +14,10 @@ export default class ServerAdder extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
   handleNameChange(event){
-    this.setState({name: event.target.value, owner: this.state.owner});
+    this.setState({name: event.target.value, password: this.state.owner});
   }
   handleOwnerChange(event){
-    this.setState({name: this.state.name, owner: event.target.value});
+    this.setState({name: this.state.name, password: event.target.value});
   }
   handleClick(){
     let serverName = (this.state.name !== null ? this.state.name : Math.random().toString(36).substring(7));
@@ -41,6 +41,7 @@ export default class ServerAdder extends React.Component{
           <DataForm title={'Propietario'} placeholder={'Ingrese el nombre del usuario propietario.'}
                     handleChange={this.handleOwnerChange} for={'add'}/>
         </div>
+        <label>El nombre por defecto es aleatorio y el propietario por defecto es admin.</label>
         <div className={'ServerAdder-buttons-holder'}>
           <button className={'ServerAdder-button'} onClick={this.handleClick}>Confirmar</button>
           <button className={'ServerAdder-button'} onClick={this.props.onCancel}>Cancelar</button>

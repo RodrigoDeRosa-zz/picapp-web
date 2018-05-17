@@ -1,0 +1,36 @@
+.UserManager-title-holder{
+  color: #b4b4b4;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+}
+.UserManager-icon{
+  font-size: 70px;
+  padding-right: 15px;
+}
+.UserManager-label {
+  font-size: 25px;
+}
+.UserManager-user-holder {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.UserManager-notice {
+  color: white;
+  font-size: 50px;
+}
+.UserManager-add-holder{
+  color: darkgreen;
+  margin-top: 40px;
+}
+.UserManager-add-icon{
+  font-size: 70px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+.UserManager-add-label{
+  display: block;
+  font-size: 20px;
+  cursor: pointer;
+}

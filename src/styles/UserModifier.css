@@ -1,11 +1,10 @@
-.ServerAdder-buttons-holder{
+.UserModifier-buttons-holder{
   display: flex;
   justify-content: space-around;
-  margin-top: 10px;
   padding: 10px;
-  border-top: 3px solid darkgreen;
+  border-top: 3px solid orange;
 }
-.ServerAdder-button{
+.UserModifier-button{
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   font-variant: small-caps;
   color: white;
@@ -15,6 +14,6 @@
   border-radius: 5px;
   padding: 10px 50px 10px 50px;
 }
-.ServerAdder-button:hover{
-  background-color: darkgreen;
+.UserModifier-button:hover{
+  background-color: orange;
 }

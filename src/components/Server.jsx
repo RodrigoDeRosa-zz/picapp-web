@@ -25,7 +25,7 @@ export default class Server extends React.Component{
     let body = {
       id: this.props.data.id,
       _rev: this.props.data.ref,
-      createdBy: info.owner,
+      createdBy: info.password,
       createdTime: Date.parse(this.props.data.createdAt),
       name: info.name,
       lastConnection: (new Date()).getTime()

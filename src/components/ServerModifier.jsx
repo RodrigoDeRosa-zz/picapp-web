@@ -14,15 +14,15 @@ export default class ServerModifier extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   handleNameChange(event){
-    this.setState({name: event.target.value, owner: this.state.owner});
+    this.setState({name: event.target.value, password: this.state.owner});
   }
   handleOwnerChange(event){
-    this.setState({name: this.state.name, owner: event.target.value});
+    this.setState({name: this.state.name, password: event.target.value});
   }
   handleClick(){
     let serverName = (this.state.name !== null ? this.state.name : this.props.prevName);
     let serverOwner = (this.state.owner !== null ? this.state.owner : this.props.prevOwner);
-    let info = {name: serverName, owner: serverOwner};
+    let info = {name: serverName, password: serverOwner};
     this.props.onConfirm(info);
   }
   render() {
