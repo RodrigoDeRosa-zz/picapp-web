@@ -16,7 +16,7 @@ function Servers(props){
   else {
     let servers = props.servers;
     if (props.filterBy != null && props.filterBy.trim() !== '')
-      servers = servers.filter((server) => server.createdBy === props.filterBy);
+      servers = servers.filter((server) => server.createdBy.startsWith(props.filterBy));
     return <div className={'ServerManager-server-holder'}>
       {servers.map(function (server) {
         return (

@@ -15,7 +15,7 @@ function Users(props){
   else {
     let users = props.users;
     if (props.filterBy != null && props.filterBy.trim() !== '')
-      users = users.filter((user) => user.applicationOwner === props.filterBy);
+      users = users.filter((user) => user.applicationOwner.startsWith(props.filterBy));
     return <div className={'UserManager-user-holder'}>
       {users.map(function (user) {
         return (
