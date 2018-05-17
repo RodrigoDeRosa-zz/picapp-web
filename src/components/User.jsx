@@ -27,9 +27,9 @@ export default class User extends React.Component{
       _rev: this.props.data.ref,
       password: info.password,
       applicationOwner: this.props.data.applicationOwner,
-      username: info.username
+      username: this.props.data.name
     };
-    this.props.handleModify(body, info.prevName);
+    this.props.handleModify(body);
   }
 
   render(){
@@ -41,7 +41,7 @@ export default class User extends React.Component{
         <Popup trigger={<label className={'User-modify-label' + (this.state.hover ? ' show' : '')}>MODIFICAR</label>} modal>
           {close => (<UserModifier onConfirm={(info) => {this.handleModification(info); this.unsetHovering(); close();}}
                                      onCancel={() => {this.unsetHovering(); close();}}
-                                     prevName={user.name} prevPass={user.password}/>)}
+                                     prevPass={user.password}/>)}
         </Popup>
         <div className={'User-category-item'}>
           <label className={'User-category-name'}>Nombre de usuario: </label>

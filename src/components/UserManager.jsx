@@ -13,8 +13,11 @@ function Users(props){
   const usersLoaded = props.users !== undefined;
   if (!usersLoaded) return <label className={'UserManager-notice'}>Buscando usuarios en el sistema...</label>;
   else {
+    let users = props.users;
+    if (props.filterBy != null && props.filterBy.trim() !== '')
+      users = users.filter((user) => user.applicationOwner === props.filterBy);
     return <div className={'UserManager-user-holder'}>
-      {props.users.map(function (user) {
+      {users.map(function (user) {
         return (
           <User key={user.name} data={user} handleDelete={props.handleDelete} handleModify={props.handleModify}/>
         )
@@ -28,12 +31,14 @@ export default class UserManager extends React.Component{
     super(props);
     this.state = {
       failed: false,
-      users: undefined
+      users: undefined,
+      filterBy: null
     };
     this.getUsers();
     this.handleDelete = this.handleDelete.bind(this);
     this.handleModify = this.handleModify.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
+    this.setInput = this.setInput.bind(this);
   }
   /* Fetches server list from PicApp Shared Server*/
   getUsers(){
@@ -61,8 +66,8 @@ export default class UserManager extends React.Component{
       }, {label: 'No',onClick: () => {}}]})
   }
   /* Modifies a server*/
-  handleModify(user, prevName){
-    let url = 'http://picappss.herokuapp.com/api/users/' + prevName;
+  handleModify(user){
+    let url = 'http://picappss.herokuapp.com/api/users/' + user.username;
     let password = user.password;
     axios.put(url, user)
       .then((response) => {
@@ -84,16 +89,27 @@ export default class UserManager extends React.Component{
       })
       .catch(() => this.handleError());
   }
+  setInput(event){
+    this.setState({filterBy: event.target.value});
+  }
 
   render(){
     return (
       <div>
         <Header/>
-        <div className={'UserManager-title-holder'}>
-          <label className={'UserManager-icon'}><FaChild/></label>
-          <label className={'UserManager-label'}>Administración de Usuarios</label>
+        <div className={'UserManager-title-filter-holder'}>
+          <div className={'UserManager-title-holder'}>
+            <label className={'UserManager-icon'}><FaChild/></label>
+            <label className={'UserManager-label'}>Administración de Usuarios</label>
+          </div>
+          <div className={'ServerManager-filter-holder'}>
+            <label className={'ServerManager-filter-title'}>Filtrar por propietario de aplicación:</label>
+            <input className={'ServerManager-filter-input'} placeholder={'Ingrese el nombre del propietario'}
+                   onChange={this.setInput}/>
+          </div>
         </div>
-        <Users users={this.state.users} handleDelete={this.handleDelete} handleModify={this.handleModify}/>
+        <Users users={this.state.users} handleDelete={this.handleDelete}
+               handleModify={this.handleModify} filterBy={this.state.filterBy}/>
         {this.state.users !== undefined &&
         <Popup trigger={
           <div className={'UserManager-add-holder'}>
