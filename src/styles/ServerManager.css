@@ -34,3 +34,26 @@
   font-size: 20px;
   cursor: pointer;
 }
+.ServerManager-title-filter-holder{
+  display: flex;
+  justify-content: space-between;
+}
+.ServerManager-filter-holder{
+  display: flex;
+  padding: 20px;
+  align-items: center;
+}
+.ServerManager-filter-title{
+  color: #cccccc;
+  font-size: 20px;
+  padding-right: 10px;
+}
+.ServerManager-filter-input {
+  height: 20px;
+  font-style: italic;
+  font-size: 15px;
+  width: 300px;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+}

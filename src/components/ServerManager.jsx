@@ -14,8 +14,11 @@ function Servers(props){
   const serversLoaded = props.servers !== undefined;
   if (!serversLoaded) return <label className={'ServerManager-notice'}>Buscando servidores en el sistema...</label>;
   else {
+    let servers = props.servers;
+    if (props.filterBy != null && props.filterBy.trim() !== '')
+      servers = servers.filter((server) => server.createdBy === props.filterBy);
     return <div className={'ServerManager-server-holder'}>
-      {props.servers.map(function (server) {
+      {servers.map(function (server) {
         return (
           <Server key={server.id} data={server} handleDelete={props.handleDelete} handleModify={props.handleModify}/>
         )
@@ -30,12 +33,14 @@ export default class ServerManager extends React.Component{
     this.state = {
       token: props.history.location.state.token,
       failed: false,
-      servers: undefined
+      servers: undefined,
+      filterBy: null
     };
     this.getServers();
     this.handleDelete = this.handleDelete.bind(this);
     this.handleModify = this.handleModify.bind(this);
     this.handleAdd = this.handleAdd.bind(this);
+    this.setInput = this.setInput.bind(this);
   }
   /* Fetches server list from PicApp Shared Server*/
   getServers(){
@@ -73,16 +78,27 @@ export default class ServerManager extends React.Component{
     let url = 'http://picappss.herokuapp.com/api/servers/?BusinessToken=' + this.state.token;
     axios.post(url, server).then(() => this.getServers()).catch(() => this.handleError());
   }
+  setInput(event){
+    this.setState({filterBy: event.target.value});
+  }
 
   render(){
     return (
       <div>
         <Header/>
-        <div className={'ServerManager-title-holder'}>
-          <label className={'ServerManager-icon'}><FaDatabase/></label>
-          <label className={'ServerManager-label'}>Administración de Servidores</label>
+        <div className={'ServerManager-title-filter-holder'}>
+          <div className={'ServerManager-title-holder'}>
+            <label className={'ServerManager-icon'}><FaDatabase/></label>
+            <label className={'ServerManager-label'}>Administración de Servidores</label>
+          </div>
+          <div className={'ServerManager-filter-holder'}>
+            <label className={'ServerManager-filter-title'}>Filtrar por propietario:</label>
+            <input className={'ServerManager-filter-input'} placeholder={'Ingrese el nombre del propietario'}
+                   onChange={this.setInput}/>
+          </div>
         </div>
-        <Servers servers={this.state.servers} handleDelete={this.handleDelete} handleModify={this.handleModify}/>
+        <Servers servers={this.state.servers} handleDelete={this.handleDelete}
+                 handleModify={this.handleModify} filterBy={this.state.filterBy}/>
         {this.state.servers !== undefined &&
           <Popup trigger={
             <div className={'ServerManager-add-holder'}>
