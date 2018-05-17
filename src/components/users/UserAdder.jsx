@@ -26,7 +26,7 @@ export default class UserAdder extends React.Component{
       id: Math.floor(Math.random() * 1000000) + 2,
       _rev: 0,
       password: password,
-      applicationOwner: 'SteelSoft',
+      applicationOwner: 'steelsoft',
       username: username
     };
     this.props.onConfirm(body);
