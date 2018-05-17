@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/UserAdder.css'
-import DataForm from "./DataForm";
+import '../../styles/UserAdder.css'
+import DataForm from "../utils/DataForm";
 
 export default class UserAdder extends React.Component{
   constructor(props){

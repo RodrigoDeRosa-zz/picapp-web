@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/DataForm.css';
+import '../../styles/DataForm.css';
 
 export default class DataForm extends React.Component {
   render() {

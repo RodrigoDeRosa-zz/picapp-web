@@ -5,14 +5,19 @@
   "dependencies": {
     "ajv": "^6.5.0",
     "axios": "^0.18.0",
+    "chart.js": "^1.1.1",
+    "link": "^0.1.5",
     "qs": "^6.5.2",
     "react": "^16.3.2",
+    "react-chartjs": "^1.2.0",
     "react-confirm-alert": "^2.0.2",
     "react-dom": "^16.3.2",
     "react-icons": "^2.2.7",
+    "react-native": "^0.55.4",
     "react-router-dom": "^4.2.2",
     "react-scripts": "1.1.4",
-    "reactjs-popup": "^1.1.1"
+    "reactjs-popup": "^1.1.1",
+    "save": "^2.3.2"
   },
   "scripts": {
     "start": "react-scripts start",

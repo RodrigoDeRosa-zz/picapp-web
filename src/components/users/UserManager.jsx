@@ -1,7 +1,7 @@
 import React from 'react';
-import '../styles/UserManager.css';
+import '../../styles/UserManager.css';
 import axios from "axios/index";
-import Header from "./Header";
+import Header from "../utils/Header";
 import FaChild from "react-icons/lib/fa/child";
 import Popup from "reactjs-popup";
 import FaPlus from "react-icons/lib/fa/plus";

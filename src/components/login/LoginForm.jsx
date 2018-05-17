@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/LoginForm.css'
-import Form from "./Form";
+import '../../styles/LoginForm.css'
+import Form from "../utils/Form";
 
 export default class LoginForm extends React.Component{
   /* Props composition:

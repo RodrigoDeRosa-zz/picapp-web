@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from "reactjs-popup";
-import '../styles/Server.css'
+import '../../styles/Server.css'
 import ServerModifier from "./ServerModifier";
 
 export default class Server extends React.Component{

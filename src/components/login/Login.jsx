@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/Login.css';
+import '../../styles/Login.css';
 import axios from 'axios';
 import LoginForm from "./LoginForm";
 import LoginButton from "./LoginButton";
@@ -74,7 +74,7 @@ export default class Login extends React.Component {
   render() {
     return (
       <div className="Login-holder">
-        <img className='Login-logo' src={require('../resources/picapp_logo.png')} alt='PicApp Server Management'/>
+        <img className='Login-logo' src={require('../../resources/picapp_logo.png')} alt='PicApp Server Management'/>
         <LoginForm formIsValid={this.state.formIsValid} handleChange={this.handleChange}
                    username={this.state.username} password={this.state.password}/>
         <label className={'Login-error-label' + ((this.state.formIsValid.password && this.state.formIsValid.username) ? '' : ' show')}>

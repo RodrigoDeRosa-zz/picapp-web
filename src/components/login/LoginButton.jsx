@@ -1,5 +1,5 @@
 import React from 'react';
-import '../styles/LoginButton.css';
+import '../../styles/LoginButton.css';
 
 export default class LoginButton extends React.Component {
   constructor(props){

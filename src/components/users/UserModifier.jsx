@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/UserModifier.css';
-import DataForm from "./DataForm";
+import '../../styles/UserModifier.css';
+import DataForm from "../utils/DataForm";
 
 export default class UserModifier extends React.Component {
   constructor(props){

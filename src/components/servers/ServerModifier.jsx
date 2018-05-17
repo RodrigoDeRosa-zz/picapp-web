@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/ServerModifier.css';
-import DataForm from "./DataForm";
+import '../../styles/ServerModifier.css';
+import DataForm from "../utils/DataForm";
 
 export default class ServerModifier extends React.Component {
   constructor(props){

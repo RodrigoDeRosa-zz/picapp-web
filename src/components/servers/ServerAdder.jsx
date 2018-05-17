@@ -1,6 +1,6 @@
 import React from 'react';
-import '../styles/ServerAdder.css'
-import DataForm from "./DataForm";
+import '../../styles/ServerAdder.css'
+import DataForm from "../utils/DataForm";
 
 export default class ServerAdder extends React.Component{
   constructor(props){
@@ -14,10 +14,10 @@ export default class ServerAdder extends React.Component{
     this.handleClick = this.handleClick.bind(this);
   }
   handleNameChange(event){
-    this.setState({name: event.target.value, password: this.state.owner});
+    this.setState({name: event.target.value, owner: this.state.owner});
   }
   handleOwnerChange(event){
-    this.setState({name: this.state.name, password: event.target.value});
+    this.setState({name: this.state.name, owner: event.target.value});
   }
   handleClick(){
     let serverName = (this.state.name !== null ? this.state.name : Math.random().toString(36).substring(7));

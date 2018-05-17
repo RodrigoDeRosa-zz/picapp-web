@@ -1,6 +1,6 @@
 import React from 'react';
 import Popup from "reactjs-popup";
-import '../styles/User.css'
+import '../../styles/User.css'
 import UserModifier from "./UserModifier";
 
 export default class User extends React.Component{
