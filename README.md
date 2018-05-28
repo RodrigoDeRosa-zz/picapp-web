@@ -25,6 +25,3 @@ This app is also running on a [Heroku](https://www.heroku.com) server. You can s
 As well as the mentioned CORS issues, when opening the app hosted in Heroku, your browser may
 notify you that it is not a safe connection; to let the app work properly, just ignore the
 notice and give it permission to execute..
-
-
-	signed commit test
