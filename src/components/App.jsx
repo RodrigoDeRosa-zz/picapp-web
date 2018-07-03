@@ -7,6 +7,7 @@ import ServerManager from "./servers/ServerManager";
 import UserManager from "./users/UserManager";
 import StatisticsManager from "./statistics/StatisticsManager";
 import FileManager from "./files/FileManager";
+import ServerStatistics from "./servers/ServerStatistics";
 
 export default class App extends React.Component {
   render() {
@@ -18,7 +19,12 @@ export default class App extends React.Component {
         <Route exact path='/users' component={UserManager}/>
         <Route exact path='/statistics' component={StatisticsManager}/>
         <Route exact path='/files' component={FileManager}/>
+        <Route path={'/server/:name'} component={ServerStatisticsWrapper}/>
       </Switch>
     );
   }
 }
+
+const ServerStatisticsWrapper = ({match}) => (
+  <ServerStatistics name={match.params.name}/>
+);

@@ -12,11 +12,21 @@
 .Server-holder:hover{
   border: 2px solid #585858;
 }
-.Server-title{
+.Server-title-holder{
   flex-basis: 100%;
+  display: flex;
+  align-content: center;
+  align-items: center;
+  padding-bottom: 10px;
+  justify-content: center;
+}
+.Server-title{
   font-weight: bold;
   font-size: 30px;
-  padding-bottom: 10px;
+  padding-right: 10px;
+}
+.Server-title.off{
+  color: #606060;
 }
 .Server-category-item{
   flex-basis: 100%;
@@ -49,4 +59,49 @@
 .Server-modify-label.show{
   visibility: visible;
   cursor: pointer;
+}
+.Server-statistics-holder{
+  position: absolute;
+  bottom: 15px;
+  right: 0;
+  color: greenyellow;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  align-content: center;
+}
+.Server-statistics-holder.off{
+  color: #606060;
+}
+.Server-statistics-icon{
+  flex-basis: 100%;
+  font-weight: bold;
+  font-size: 30px;
+  visibility: hidden;
+  cursor: pointer;
+}
+.Server-statistics-icon.show{
+  visibility: visible;
+}
+.Server-statistics-icon.off{
+  cursor: not-allowed;
+}
+.Server-statistics-label{
+  flex-basis: 100%;
+  font-weight: bold;
+  font-size: 15px;
+  visibility: hidden;
+  cursor: pointer;
+}
+.Server-statistics-label.show{
+  visibility: visible;
+}
+.Server-statistics-label.off{
+  cursor: not-allowed;
+}
+.Server-status-icon-on{
+  color: green;
+}
+.Server-status-icon-off{
+  color: red;
 }

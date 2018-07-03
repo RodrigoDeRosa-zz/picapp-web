@@ -1,0 +1,20 @@
+.charts-container{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+.chart-holder {
+  display: flex;
+  flex-wrap: wrap;
+  flex-basis: 40%;
+  width: fit-content;
+}
+.chart-label{
+  flex-basis: 100%;
+  color: white;
+  font-size: 20px;
+}
+.chart{
+  padding: 20px;
+  flex-basis: 100%;
+}

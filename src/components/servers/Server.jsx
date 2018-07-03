@@ -1,6 +1,9 @@
 import React from 'react';
 import Popup from "reactjs-popup";
-import '../../styles/Server.css'
+import '../../styles/Server.css';
+import FaAreaChart from "react-icons/lib/fa/area-chart";
+import FaTimesCircle from "react-icons/lib/fa/times-circle";
+import FaCheckCircle from "react-icons/lib/fa/check-circle";
 import ServerModifier from "./ServerModifier";
 
 export default class Server extends React.Component{
@@ -11,6 +14,8 @@ export default class Server extends React.Component{
     this.unsetHovering = this.unsetHovering.bind(this);
     this.handleDelete = this.handleDelete.bind(this);
     this.handleModification = this.handleModification.bind(this);
+    this.showStatistics = this.showStatistics.bind(this);
+    this.isAlive = this.isAlive.bind(this);
   }
   setHovering(){
     this.setState({hover: true});
@@ -32,6 +37,12 @@ export default class Server extends React.Component{
     };
     this.props.handleModify(body);
   }
+  showStatistics(){
+    if (this.isAlive()) this.props.history.push('/server/'+this.props.data.name);
+  }
+  isAlive(){
+    return this.props.data.name === 'applicationServer-v2.0';
+  }
 
   render(){
     const server = this.props.data;
@@ -44,7 +55,15 @@ export default class Server extends React.Component{
                                      onCancel={() => {this.unsetHovering(); close();}}
                                      prevName={server.name} prevOwner={server.createdBy}/>)}
         </Popup>
-        <label className={'Server-title'}>{server.name}</label>
+        <div className={'Server-statistics-holder' + (this.isAlive() ? '' : ' off')} onClick={this.showStatistics}>
+          <label className={'Server-statistics-icon' + (this.state.hover ? ' show' : '') + (this.isAlive() ? '' : ' off')}><FaAreaChart/></label>
+          <label className={'Server-statistics-label' + (this.state.hover ? ' show' : '') + (this.isAlive() ? '' : ' off')}>Estadísticas</label>
+        </div>
+        <div className={'Server-title-holder'}>
+          <label className={'Server-title' + (this.isAlive() ? '' : ' off')}>{server.name}</label>
+          {!this.isAlive() && <label className="Server-status-icon-off"><FaTimesCircle/></label>}
+          {this.isAlive() && <label className="Server-status-icon-on"><FaCheckCircle/></label>}
+        </div>
         <div className={'Server-category-item'}>
           <label className={'Server-category-name'}>Propietario: </label>
           <label className={'Server-category-value'}>{server.createdBy}</label>

@@ -20,7 +20,7 @@ function Servers(props){
     return <div className={'ServerManager-server-holder'}>
       {servers.map(function (server) {
         return (
-          <Server key={server.id} data={server} handleDelete={props.handleDelete} handleModify={props.handleModify}/>
+          <Server key={server.id} data={server} history={props.history} handleDelete={props.handleDelete} handleModify={props.handleModify}/>
         )
       })}
     </div>
@@ -97,7 +97,7 @@ export default class ServerManager extends React.Component{
                    onChange={this.setInput}/>
           </div>
         </div>
-        <Servers servers={this.state.servers} handleDelete={this.handleDelete}
+        <Servers servers={this.state.servers} history={this.props.history} handleDelete={this.handleDelete}
                  handleModify={this.handleModify} filterBy={this.state.filterBy}/>
         {this.state.servers !== undefined &&
           <Popup trigger={
