@@ -41,7 +41,7 @@ export default class Server extends React.Component{
     if (this.isAlive()) this.props.history.push('/server/'+this.props.data.name);
   }
   isAlive(){
-    return this.props.data.name === 'applicationServer-v2.0';
+    return this.props.data.token === '93207910';
   }
 
   render(){
