@@ -18,3 +18,7 @@
   padding: 20px;
   flex-basis: 100%;
 }
+.ServerManager-notice {
+  color: white;
+  font-size: 50px;
+}

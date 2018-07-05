@@ -113,6 +113,9 @@ export default class ServerStatistics extends React.Component{
           <label className={'ServerManager-icon'}><FaAreaChart/></label>
           <label className={'ServerManager-label'}>Estadísticas de {this.props.name}</label>
         </div>
+        {this.state.stories === null &&
+          <label className={'ServerManager-notice'}>Calculando estadísticas del servidor...</label>
+        }
         {this.state.stories !== null &&
         <div className={'charts-container'}>
           <div className={'chart-holder'}>
