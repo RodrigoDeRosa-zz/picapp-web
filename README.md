@@ -15,6 +15,8 @@ With that, npm will set up the environment and open a browser with the app.
 It is highly probable that your browser will complain about some [CORS](https://en.wikipedia.org/wiki/Cross-origin_resource_sharing)
 issues; because of that, you should download and activate the [CORS Chrome Plugin](https://chrome.google.com/webstore/detail/allow-control-allow-origi/nlfbmbojpeacfghkpbjhddihlkkiljbi).
 Moreover, sometimes you will have to activate it *AFTER* starting the app with npm. 
+Also, for file administration, you will need to have CORS *OFF*, otherwise, Firebase won't
+answer to http calls.
 
 ## Clouding
 
@@ -25,3 +27,6 @@ This app is also running on a [Heroku](https://www.heroku.com) server. You can s
 As well as the mentioned CORS issues, when opening the app hosted in Heroku, your browser may
 notify you that it is not a safe connection; to let the app work properly, just ignore the
 notice and give it permission to execute.
+
+## User Guide
+You may find the user guide [here](https://docs.google.com/document/d/1RgifHkKI69chQkqnWnu6Eg7BB4z2CfkMCMQ7Paa-WUU/edit#heading=h.8bs2n3eej8m).
